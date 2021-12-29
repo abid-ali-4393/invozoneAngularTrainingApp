@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HighlightDirective } from './highlight.directive';
+import { TemplateUserFormComponent } from './components/template-user-form/template-user-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveUserFormComponent } from './components/reactive-user-form/reactive-user-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HighlightDirective,
+    TemplateUserFormComponent,
+    ReactiveUserFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

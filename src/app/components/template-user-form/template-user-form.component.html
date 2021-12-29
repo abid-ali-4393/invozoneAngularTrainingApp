@@ -1,0 +1,36 @@
+<form #userForm = "ngForm" (submit) = "registerUser(userForm)">
+  <label for="userName">User Name:</label>
+  <input type="text" [(ngModel)]="userName" id="userName" name="userName" />
+  <br />
+  <label for="userAge"> User Age:</label>
+  <input type="number" [(ngModel)]="userAge" id="userAge" name="userAge" required min="0" />
+
+  <br />
+
+  <label for="goalsDesc"> User Goals Description:</label>
+  <textarea type="number" [(ngModel)]="goalsDesc" id="goalsDesc" name="goalsDesc" required minlength="10" ></textarea>
+
+  <br />
+
+  <label for="agreeTerms"> Agree Terms & Conditions</label>
+  <input type="checkbox" [(ngModel)]="agreeTerms" id="agreeTerms" name="agreeTerms"   value="yes"/>
+
+  <br />
+
+
+  <label for="learningPlan">Select Your Plan</label>
+  <select [(ngModel)]="learningPlan" id="learningPlan" name="learningPlan">
+  <option vlaue = "Premium"> Premium</option>
+
+  <option vlaue = "Gold"> Gold</option>
+  
+  <option vlaue = "Free"> Free</option>
+</select>
+<br/>
+<button type="submit" [disabled] = "!userForm.valid">Register User</button>
+<br/>
+
+<button type="submit" (click) = "resetData(userForm)">Reset Form</button>
+
+<button type="submit" (click) = "setUserData(userForm)">Add User Data</button>
+</form>

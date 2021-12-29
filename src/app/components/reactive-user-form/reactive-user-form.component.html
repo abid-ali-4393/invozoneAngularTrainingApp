@@ -1,0 +1,15 @@
+<form [formGroup]="addUserForm">
+    <label>User Name:</label><br/>
+    <input type="text" formControlName="userName" ><br/>
+    <label>User Email:</label><br/>
+    <input type="text" formControlName="userEmail" ><br/>
+    <label>User Phone:</label><br/>
+    <input type="text" formControlName="userPhone" ><br/>
+    <label>User Address:</label><br/>
+    <input type="text" formControlName="userAddress"><br/>
+
+    <button (click) = "addData()" [disabled] = "!addUserForm.valid">Click to Add Data</button>
+
+</form>
+
+<h1>Hi</h1>

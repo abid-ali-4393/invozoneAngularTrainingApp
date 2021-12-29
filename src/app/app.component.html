@@ -1,17 +1,57 @@
-<div class ="main-div">
-  <h3>{{companyTitle}}</h3>
-  <input type = "text" [(ngModel)]="productDisc" />
-  <br/>
-  <h3>Hi following is product discription:{{productDisc}}</h3>
-  <h3 [style.color] = "red">Style Binding </h3>
-  <p [class]="paraDesc">This is really long text that exist from the ancient days. In ancient days human being used to live caves.</p>
+<!--Data Binding Practice-->
+<!-- <div class="main-div">
+  <h3>{{ companyTitle }}</h3>
+  <input type="text" [(ngModel)]="productDisc" />
+  <br />
+  <h3>Hi following is product discription:{{ productDisc }}</h3>
+  <h3 [style.color]="red">Style Binding</h3>
+  <p [class]="paraDesc">
+    This is really long text that exist from the ancient days. In ancient days
+    human being used to live caves.
+  </p>
 
-  <p [innerHTML] = "innerData"></p>
-  <button [disabled] = isDisable>Click to submit</button>
+  <p [innerHTML]="innerData"></p>
+  <button [disabled]="isDisable">Click to submit</button>
 
-  <button (click) = "alertUser()">Event Binding Button</button>
-</div>
+  <button (click)="alertUser()">Event Binding Button</button>
+</div> -->
+
+<!--Directives Practice-->
+<!-- <div>
+  <h1 [ngClass]="classDirNames">{{ classDirDesc }}</h1>
+  <h2
+    [ngStyle]="{
+      color: 'blue'
+    }"
+  >
+    Description for ngStyle Directive
+  </h2>
+</div> -->
+
+<!--Pipes Practice-->
+<!-- <p>{{ userName | uppercase }}</p>
+<p>{{ userEmail | lowercase }}</p>
+<p>{{ salary | currency: "PKR" }}</p>
+<p>{{ dob | date: "full" }}</p> -->
+
+<!--Directives Code Practice-->
+<!-- <div [ngClass]="divClass">
+  <p *ngIf="loginType">Show only if login type is user</p>
+
+  <div [ngSwitch]="userType">
+    <p *ngSwitchCase="'employee'">Loged in user type is employee</p>
+    <p *ngSwitchCase="'Admin'">Loged in user type is Admin</p>
+    <p *ngSwitchDefault>Loged in user type is Admin</p>
+  </div>
 
 
+  <ul *ngFor="let item of items">
+    <li>{{item}}</li>
+  </ul>
 
+</div> -->
+<!-- 
+<app-template-user-form></app-template-user-form> -->
+
+<app-reactive-user-form></app-reactive-user-form>
 <router-outlet></router-outlet>
