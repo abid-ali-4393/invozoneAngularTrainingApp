@@ -1,0 +1,115 @@
+<!--Material Typography -->
+<div>
+  <p class="mat-display-4">This is dispaly 4 Class</p>
+  <p class="mat-display-3">This is dispaly 3 Class</p>
+  <p class="mat-display-2">This is display 2 Class</p>
+  <p class="mat-display-1">This is display 1 Class</p>
+
+  <p class="mat-headline">This is Headline Class</p>
+  <p class="mat-title">This is title Class</p>
+  <p class="mat-subheading-1">This is sub heading 1 Class</p>
+  <p class="mat-subheading-2">This is sub heading 2 Class</p>
+
+  <div class="typography">
+    <h1>Using Typography This is Headline Class</h1>
+    <h2>Using Typography This is title Class</h2>
+    <h3>Using Typography This is sub heading 1 Class</h3>
+    <h4>Using Typography This is sub heading 2 Class</h4>
+  </div>
+
+  <p class="mat-body-1">This is body-1 Class</p>
+  <p class="mat-body-2">This is body-2 Class</p>
+  <p class="mat-caption">This is caption 2 Class</p>
+</div>
+
+<!--Material Buttons -->
+<div>
+  <button mat-button>Button</button>
+  <button mat-flat-button>Button</button>
+  <button mat-raised-button>Button</button>
+  <button mat-stroked-button>Button</button> <br />
+
+  <button mat-icon-button>Button</button>
+  <button mat-fab>Button</button>
+  <button mat-mini-fab>Button</button><br />
+
+  <button disableRipple color="primary" mat-stroked-button>Button</button>
+  <button color="accent" mat-flat-button>Button</button>
+  <button color="warn" mat-raised-button>Button</button>
+</div>
+
+<!--Material Button Toggle  -->
+<div>
+  <mat-button-toggle #toggleBtn disableRipple disabled checked
+    >Toggle me</mat-button-toggle
+  >
+  <p>{{ toggleBtn.checked }}</p>
+
+  <div>
+    <mat-button-toggle-group #toggleGrp="matButtonToggleGroup" multiple>
+      <mat-button-toggle value="Undergrad">Undergrad</mat-button-toggle>
+      <mat-button-toggle value="Master">Master</mat-button-toggle>
+      <mat-button-toggle value="Doctorate">Doctorate</mat-button-toggle>
+    </mat-button-toggle-group>
+    <p>{{ toggleGrp.value }}</p>
+  </div>
+</div>
+
+<!--Material Icons-->
+<p class="mat-headline">Material Icons</p>
+<mat-icon color="primary">perm_phone_msg</mat-icon><br />
+
+
+<!--Material Badges-->
+<p class="mat-headline">Material Badges</p>
+<div>
+  <span
+    matBadge="4"
+    matBadgePosition="before below"
+    matBadgeSize="small"
+    matBadgeColor="accent"
+    [matBadgeHidden]="false"
+    >Messages</span
+  >
+
+  <!--Positions-->
+  <p class="mat-title">Badge Position</p>
+  <div>
+    <span [matBadge]="messageNotifications" matBadgePosition="before above">Messages</span>
+  </div>
+  <div>
+    <span [matBadge]="messageNotifications" matBadgePosition="before below">Messages</span>
+  </div>
+  <div>
+    <span [matBadge]="messageNotifications" matBadgePosition="after above">Messages</span>
+  </div>
+  <div>
+    <span [matBadge]="messageNotifications" matBadgePosition="after below">Messages</span>
+  </div>
+
+  <!--Size-->
+
+  <p class="mat-title">Badge Size With color</p>
+  <div>
+    <span [matBadge]="messageNotifications" matBadgePosition="after above" matBadgeSize="small" matBadgeColor="accent">Messages</span>
+  </div>
+  <div>
+    <span [matBadge]="messageNotifications" matBadgePosition="before above" matBadgeSize="medium">Messages</span>
+  </div>
+  <div>
+    <span [matBadge]="messageNotifications" matBadgePosition="after below" matBadgeSize="large">Messages</span>
+  </div>
+
+</div>
+
+<br/><br/><br/><br/>
+
+<!--Progress Spinner-->
+
+<p class="mat-title">Progress Spinner</p><br/>
+<div>
+    <mat-spinner color="accent" ></mat-spinner><br/><br/>
+    <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner><br/><br/>
+    <mat-progress-spinner value="90" color="warn" mode="determinate" ></mat-progress-spinner>
+
+</div>

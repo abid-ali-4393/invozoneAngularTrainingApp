@@ -1,0 +1,39 @@
+button{
+    margin:15px;
+    height: 40px;
+    width: 80px;
+}
+
+div{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+span{
+    padding-right: 2rem;
+}
+
+.navbar{
+    justify-content: space-between;
+}
+
+mat-sidenav-container{
+    height: 100%;
+}
+mat-sidenav,mat-sidenav-content{
+    padding: 16px;
+}
+mat-sidenav{
+    width: 250px;
+    background-color: coral;
+}
+
+mat-grid-tile{
+    background-color: antiquewhite;
+
+}
+
+button{
+    width: 150px;
+}

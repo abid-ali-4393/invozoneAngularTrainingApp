@@ -1,0 +1,113 @@
+<!--Input-->
+<!--
+    floatLabel= auto,never,always
+    appearance=legacy, standard, outlined, fill
+-->
+<br /><br /><br />
+<div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field><br />
+
+    <mat-form-field appearance="outline" requiredMarker>
+      <mat-label>User Name</mat-label>
+      <span matPrefix>
+        <mat-icon>folder</mat-icon>
+      </span>
+      <input matInput required />
+
+      <span matSuffix>
+        <mat-icon>home</mat-icon>
+      </span>
+      <mat-hint align="end"> Must be at least 5 characters</mat-hint>
+    </mat-form-field>
+    <br /><br />
+
+    <mat-form-field appearance="outline">
+      <mat-label>Payment Mode</mat-label>
+
+      <mat-select>
+        <mat-optgroup label="payment">
+          <mat-option>Cash on delivery</mat-option>
+          <mat-option>HBL card</mat-option>
+          <mat-option>Jazz Cash</mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+    <br /><br />
+    <p>Radio Buttons Practice</p>
+    <mat-radio-group>
+      <mat-radio-button selected color="primary" value="cod">
+        Cash on Delivery</mat-radio-button>
+      <br />
+      <mat-radio-button color="accent" value="hbl card">
+        HBL card</mat-radio-button>
+      <br />
+      <mat-radio-button color="warn" value="meezan card">
+        Meezan Card</mat-radio-button>
+      <br />
+    </mat-radio-group>
+    <br /><br />
+    <p>Check Box Practice</p>
+    <mat-checkbox color="warn" [checked]="true" labelPosition="before">ExpressJS</mat-checkbox>
+    <br />
+    <mat-checkbox color="warn" labelPosition="before">NestJS</mat-checkbox>
+    <br />
+    <mat-checkbox color="warn" disabled labelPosition="before">NodeJS</mat-checkbox><br />
+    <mat-checkbox color="primary" labelPosition="after">After Primary</mat-checkbox><br />
+    <mat-checkbox color="accent" labelPosition="after">After accent</mat-checkbox><br />
+    <mat-checkbox color="warn" labelPosition="after">After warn</mat-checkbox><br />
+
+    <br /><br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Order Date</mat-label>
+      <input matInput [matDatepicker]="orderDate">
+      <mat-datepicker-toggle matSuffix [for]="orderDate"></mat-datepicker-toggle>
+      <mat-datepicker #orderDate startView="multi-year"></mat-datepicker>
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a Dispatch Date</mat-label>
+      <input matInput [matDatepicker]="dispatchDate" [min]="minDate" [max]="maxDate">
+      <mat-datepicker-toggle matSuffix [for]="dispatchDate"></mat-datepicker-toggle>
+      <mat-datepicker #dispatchDate></mat-datepicker>
+    </mat-form-field>
+
+    <br /><br /><br />
+
+    <mat-form-field appearance="fill">
+      <mat-label> invoice Date</mat-label>
+      <input matInput [matDatepicker]="invoiceDate" [matDatepickerFilter]="filterWeekends">
+      <mat-datepicker-toggle matSuffix [for]="invoiceDate"></mat-datepicker-toggle>
+      <mat-datepicker #invoiceDate></mat-datepicker>
+    </mat-form-field>
+  </form>
+</div> <br /><br /><br />
+
+<!--Tooltip Practice-->
+
+<p>Tooltip Practice</p><br />
+
+<div>
+  <button mat-raised-button matTooltip="welcome to invozone family" matTooltipShowDelay="200"
+    matTooltipHideDelay="2000" matTooltipPostion="above">invozone</button>
+</div><br/><br/><br/>
+
+<div>
+    <button mat-raised-button color="primary" (click) = "openSnackBar('Deleted the content','Undo')">Open SnackBar</button>
+</div> <br/><br/><br/>
+
+<!--Dialogs Practice-->
+
+<div>
+    <button mat-raised-button color="warn" (click) ="openDialog()">Open Dialog</button>
+</div>

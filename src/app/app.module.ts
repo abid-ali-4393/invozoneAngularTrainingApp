@@ -1,18 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
-//angular material Imports
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatInputModule  } from "@angular/material/input";
-import {MatDatepickerModule} from '@angular/material/datepicker';
-
-
-
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -26,14 +14,37 @@ import { ListProductsComponent } from './components/product/list-products/list-p
 import { EditProductComponent } from './components/product/edit-product/edit-product.component';
 import { PageNotFoundComponent } from './components/shared/page-not-found/page-not-found.component';
 import { CheckLoginGuard } from './guards/shared/check-login.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { MaterialPracticeButtonsComponent } from './components/materialDesign/material-practice-buttons/material-practice-buttons.component';
+import { MaterialPracticeNavbarComponent } from './components/materialDesign/material-practice-navbar/material-practice-navbar.component';
+import { MaterialPracticeFormComponent } from './components/materialDesign/material-practice-form/material-practice-form.component';
+import { MaterialPracticeDataTableComponent } from './components/materialDesign/material-practice-data-table/material-practice-data-table.component';
+import { MatCustomDialogComponent } from './components/Dialogs/mat-custom-dialog/mat-custom-dialog.component';
 
 //routes Array
 const routes: Routes = [
   {
-    path:'',
-    redirectTo:'list-products',
+    path: '',
+    redirectTo: 'material-part-button',
+    pathMatch: 'full',
+  },
+  {
+    path: 'material-part-button',
+    component: MaterialPracticeButtonsComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'material-part-navbar',
+    component: MaterialPracticeNavbarComponent,
+    pathMatch: 'full',
+  },
+  {
+    path:'material-part-form',
+    component:MaterialPracticeFormComponent,
     pathMatch:'full'
   },
+
   {
     path: 'add-product',
     component: AddProductComponent,
@@ -44,7 +55,7 @@ const routes: Routes = [
     path: 'edit-product',
     component: EditProductComponent,
     pathMatch: 'full',
-    canActivate:[CheckLoginGuard]
+    canActivate: [CheckLoginGuard],
   },
   //parametrized route
   {
@@ -81,30 +92,24 @@ const routes: Routes = [
     ListProductsComponent,
     EditProductComponent,
     PageNotFoundComponent,
+    MaterialPracticeButtonsComponent,
+    MaterialPracticeNavbarComponent,
+    MaterialPracticeFormComponent,
+    MaterialPracticeDataTableComponent,
+    MatCustomDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    
-    //Angular material
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-
+    MaterialModule,
 
     RouterModule.forRoot(routes),
+
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-
-    //Angular material
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    ]
 })
 export class AppModule {}

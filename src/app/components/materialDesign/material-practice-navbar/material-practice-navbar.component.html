@@ -1,0 +1,279 @@
+<!--NavBar-->
+<div>
+  <mat-toolbar color="primary" class="navbar">
+    <h1>Invozone</h1>
+    <div>
+      <span>Home</span>
+      <span>About Us</span>
+      <span>Contact Us</span>
+    </div>
+  </mat-toolbar>
+</div>
+
+<!--Side Nav-->
+
+<mat-sidenav-container>
+  <mat-sidenav #navRef [(opened)]="sidenavFlag" mode="side">
+    Start
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <p (click)="navRef.toggle()">
+      <mat-icon size="large">menu</mat-icon>
+    </p>
+    <button (click)="navRef.open()">Open</button>
+    <button (click)="navRef.close()">Close</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<br /><br /><br />
+
+<div>
+  <form>
+    <mat-form-field
+      floatLabel="auto"
+      hideRequiredMarker
+      appearance="outline"
+      color="accent"
+    >
+      <mat-label for="name">Name:</mat-label>
+      <input id="name" name="name" matInput type="text" required />
+      <mat-hint align="end"> please enter your name</mat-hint>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Select your Stack</mat-label>
+      <mat-select [(value)]="selectedTech" multiple>
+        <mat-option>None</mat-option>
+        <mat-optgroup label="Web Technologie">
+          <mat-option value="angular">Angular</mat-option>
+          <mat-option value="react">React</mat-option>
+          <mat-option value="vue">Vue</mat-option>
+        </mat-optgroup>
+        <mat-optgroup label="Mobile Technologies">
+          <mat-option>React Native</mat-option>
+          <mat-option>Flutter</mat-option>
+          <mat-option>ionic</mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  {{ selectedTech }}
+</div>
+
+<br /><br /><br /><br />
+
+<!--Menus-->
+<div>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="backEnd">
+      Backend Developer
+    </button>
+    <button mat-menu-item [matMenuTriggerFor]="frontEnd">
+      FrontEnd Developer
+    </button>
+    <button mat-menu-item>Full Stack Developer</button>
+  </mat-menu>
+
+  <button mat-stroked-button color="warn" [matMenuTriggerFor]="appMenu">
+    Menu
+  </button>
+
+  <!--Sub Menu-->
+  <mat-menu #frontEnd="matMenu">
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>React</button>
+  </mat-menu>
+  <mat-menu #backEnd="matMenu">
+    <button mat-menu-item>Node JS</button>
+    <button mat-menu-item>ExpressJS</button>
+    <button mat-menu-item>Typescript</button>
+  </mat-menu>
+
+  <!--Dynamic Menu with Data-->
+  <mat-menu #dynamicMenu="matMenu">
+    <ng-template matMenuContent let-tech="tech" let-trainer="trainer">
+      <button mat-menu-item>Trainings</button>
+      <button mat-menu-item>Technology:{{ tech }}</button>
+      <button mat-menu-item>Trainer: {{ trainer }}</button>
+    </ng-template>
+  </mat-menu>
+
+  <button
+    mat-raised-button
+    color="primary"
+    [matMenuTriggerData]="{ tech: 'Angular', trainer: 'M.Bilal Zahid' }"
+    [matMenuTriggerFor]="dynamicMenu"
+  >
+    Technology
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    [matMenuTriggerData]="{ tech: 'Node JS', trainer: 'M.Bilal' }"
+    [matMenuTriggerFor]="dynamicMenu"
+  >
+    Trainer
+  </button>
+</div>
+
+<br /><br /><br /><br />
+<!--Lists-->
+<div>
+  <mat-list>
+    <mat-list-item>Apple</mat-list-item>
+    <mat-list-item>Orange</mat-list-item>
+    <mat-list-item>Pomegranate</mat-list-item>
+    <mat-list-item>Banana</mat-list-item>
+  </mat-list>
+  <br /><br />
+
+  <mat-nav-list>
+    <a mat-list-item href="#"> Home</a>
+    <a mat-list-item href="#"> About</a>
+    <a mat-list-item href="#"> Services</a>
+    <a mat-list-item href="#"> Contact Us</a>
+  </mat-nav-list>
+  <br />
+  <p>MultiLine Lists</p>
+
+  <mat-list>
+    <mat-list-item>
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine>Users</h3>
+      <p matLine>Users Detail</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon matListIcon>home</mat-icon>
+      <h3 matLine>Desktop</h3>
+      <p matLine>system desktop</p>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<br /><br /><br /><br />
+<!--Grid Lists-->
+<div>
+  <!--rowHeigh="fit" rowHeight="200px rem, em"-->
+  <mat-grid-list cols="2" rowHeight="10:1" gutterSize="10px">
+    <mat-grid-tile colspan="2"> Tile 1 </mat-grid-tile>
+    <mat-grid-tile rowspan="2">Tile 2</mat-grid-tile>
+    <mat-grid-tile>Tile 3</mat-grid-tile>
+    <mat-grid-tile rowspan="2">Tile 4</mat-grid-tile>
+    <mat-grid-tile>Tile 5</mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<br /><br /><br />
+
+<!--Expension Panel-->
+<div>
+  <p>Expension Panel</p>
+  <mat-accordion multi="true" hideToggle>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Angular Training</mat-panel-title>
+        <mat-panel-description>
+          Angular training provided by invozone</mat-panel-description
+        >
+      </mat-expansion-panel-header>
+      <h3>
+        This training course is designed to provide you hands on understanding
+        of Angular ecosystem
+      </h3>
+
+      <mat-action-row>
+        <button mat-flat-button color="primary">Enroll Training</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> React Training</mat-panel-title>
+        <mat-panel-description>
+          React training provided by invozone</mat-panel-description
+        >
+      </mat-expansion-panel-header>
+      <h3>
+        This training course is designed to provide you hands on understanding
+        of React ecosystem
+      </h3>
+
+      <mat-action-row>
+        <button mat-flat-button color="primary">Enroll Training</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<br /><br /><br />
+
+<!--Cards-->
+<div>
+  <p>Cards Practice</p>
+  <mat-card>
+    <mat-card-title>User Login</mat-card-title>
+    <mat-card-subtitle>user authentication</mat-card-subtitle>
+    <mat-card-content>This card is used to authenticate user</mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-flat-button color="warn">Login</button>
+    </mat-card-actions>
+    <mat-card-footer>Footer of the card layout</mat-card-footer>
+  </mat-card>
+</div>
+
+<br /><br /><br />
+
+<!--Tabs-->
+<div>
+  <p>Tabs Practice</p>
+  <mat-tab-group
+    #pracTab
+    (selectedTabChange)="tabChangeHandler(pracTab.selectedIndex)"
+  >
+    <mat-tab label="Angular">Angular Training Content</mat-tab>
+    <mat-tab label="React"> React Training Content </mat-tab>
+    <mat-tab label="Svelet"> Svelet Training Content </mat-tab>
+  </mat-tab-group>
+
+  <p>{{ pracTab.selectedIndex }}</p>
+</div>
+
+<br /><br /><br />
+
+<!--Stepper-->
+<div>
+  <p>Stepper practice</p>
+  <mat-horizontal-stepper linear >
+    <mat-step label="Personal Details" completed=true editable=true>
+      <p>User Personal Details</p>
+    </mat-step>
+    <mat-step label="Product Detials" completed=false optional = true>
+      <p>Product Details to be shipped</p>
+
+      <button mat-flat-button matStepperPrevious>Back</button>
+      <button mat-flat-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step label="Billing Details" completed=false
+      >Billing options available for the order</mat-step
+    >
+  </mat-horizontal-stepper>
+
+  <!--Vertical Stepper-->
+  <mat-vertical-stepper linear >
+    <mat-step label="Personal Details" completed=true editable=false>
+      <p>User Personal Details</p>
+    </mat-step>
+    <mat-step label="Product Detials" completed=false optional = true>
+      <p>Product Details to be shipped</p>
+
+      <button mat-flat-button matStepperPrevious>Back</button>
+      <button mat-flat-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step label="Billing Details" completed=false
+      >Billing options available for the order</mat-step
+    >
+  </mat-vertical-stepper>
+
+</div>
+<br /><br /><br />
