@@ -24,6 +24,7 @@ import { MaterialPracticeFormComponent } from './components/materialDesign/mater
 import { MaterialPracticeDataTableComponent } from './components/materialDesign/material-practice-data-table/material-practice-data-table.component';
 import { MatCustomDialogComponent } from './components/Dialogs/mat-custom-dialog/mat-custom-dialog.component';
 import { ServiceDemoComponent } from './components/servicesPractice/service-demo/service-demo.component';
+import { PostDemoComponent } from './components/servicesPractice/post-demo/post-demo.component';
 
 // routes Array
 const routes: Routes = [
@@ -106,6 +107,7 @@ const routes: Routes = [
     MaterialPracticeDataTableComponent,
     MatCustomDialogComponent,
     ServiceDemoComponent,
+    PostDemoComponent,
   ],
   imports: [
     BrowserModule,
