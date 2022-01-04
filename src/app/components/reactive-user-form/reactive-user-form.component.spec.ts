@@ -8,9 +8,9 @@ describe('ReactiveUserFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReactiveUserFormComponent ]
+      declarations: [ReactiveUserFormComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

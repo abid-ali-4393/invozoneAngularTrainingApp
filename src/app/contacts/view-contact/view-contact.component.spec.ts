@@ -8,9 +8,9 @@ describe('ViewContactComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewContactComponent ]
+      declarations: [ViewContactComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

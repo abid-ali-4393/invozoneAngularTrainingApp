@@ -13,6 +13,7 @@ import {
 })
 export class ReactiveUserFormComponent implements OnInit {
   addUserForm: FormGroup;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -37,7 +38,7 @@ export class ReactiveUserFormComponent implements OnInit {
           Validators.required,
           Validators.minLength(7),
           Validators.maxLength(25),
-        ])
+        ]),
       ),
     });
 
@@ -56,10 +57,10 @@ export class ReactiveUserFormComponent implements OnInit {
     //   "userEmail": 'Email of the user patch',
 
     // }
-    //this.addUserForm.patchValue(patchValueObj);
+    // this.addUserForm.patchValue(patchValueObj);
 
-    //console.log(this.addUserForm.value);
-    //console.log(this.addUserForm.get('userName').value);
+    // console.log(this.addUserForm.value);
+    // console.log(this.addUserForm.get('userName').value);
     // this.addUserForm.valueChanges.subscribe(data =>{
     //   console.log(data);
 
@@ -67,6 +68,6 @@ export class ReactiveUserFormComponent implements OnInit {
   }
 
   addData() {
-    //console.log(this.addUserForm.value);
+    // console.log(this.addUserForm.value);
   }
 }

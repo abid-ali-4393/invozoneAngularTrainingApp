@@ -8,9 +8,9 @@ describe('MaterialPracticeDataTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MaterialPracticeDataTableComponent ]
+      declarations: [MaterialPracticeDataTableComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -12,20 +12,25 @@ export class TemplateUserFormComponent implements OnInit {
   ngOnInit(): void {}
 
   userName: string = '';
+
   userAge = 0;
+
   goalsDesc = '';
+
   agreeTerms = '';
+
   learningPlan = '';
 
   registerUser(userForm: NgForm) {
     console.log(userForm.value);
   }
+
   resetData(userForm: NgForm) {
     userForm.reset();
   }
 
   setUserData(userForm: NgForm) {
-    let user = {
+    const user = {
       userName: 'set user from method',
       userAge: 25,
       goalsDesc: 'descript set by method',

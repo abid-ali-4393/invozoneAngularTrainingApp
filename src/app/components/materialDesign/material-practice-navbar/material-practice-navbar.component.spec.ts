@@ -8,9 +8,9 @@ describe('MaterialPracticeNavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MaterialPracticeNavbarComponent ]
+      declarations: [MaterialPracticeNavbarComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -17,23 +17,28 @@ import {
   styleUrls: ['./add-contact.component.scss'],
 })
 export class AddContactComponent
-  implements
+implements
     OnInit,
     OnChanges,
     DoCheck,
     AfterContentInit,
     AfterContentChecked,
     AfterViewInit,
-    AfterViewChecked
-{
+    AfterViewChecked {
   constructor() {}
 
   ngOnInit(): void {}
+
   ngOnChanges(changes: SimpleChanges): void {}
+
   ngDoCheck(): void {}
+
   ngAfterContentInit(): void {}
+
   ngAfterContentChecked(): void {}
+
   ngAfterViewInit(): void {}
+
   ngAfterViewChecked(): void {}
 
   ngOnDestroy(): void {}

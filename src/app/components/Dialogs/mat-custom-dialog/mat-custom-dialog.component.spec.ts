@@ -8,9 +8,9 @@ describe('MatCustomDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MatCustomDialogComponent ]
+      declarations: [MatCustomDialogComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -6,19 +6,17 @@ import { DeleteContactComponent } from './delete-contact/delete-contact.componen
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { ListContactsComponent } from './list-contacts/list-contacts.component';
 
-
-
 @NgModule({
   declarations: [
     AddContactComponent,
     EditContactComponent,
     DeleteContactComponent,
     ViewContactComponent,
-    ListContactsComponent
+    ListContactsComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  bootstrap:[AddContactComponent]
+  bootstrap: [AddContactComponent],
 })
 export class ContactsModule { }

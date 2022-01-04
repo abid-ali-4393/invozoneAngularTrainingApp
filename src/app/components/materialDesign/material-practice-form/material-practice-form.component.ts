@@ -12,6 +12,7 @@ export class MaterialPracticeFormComponent implements OnInit {
   constructor(private _snackBar: MatSnackBar, private matDialog: MatDialog) {}
 
   openSnackRef = this._snackBar.open('', 'undo');
+
   openSnackBar(message, action) {
     this.openSnackRef = this._snackBar.open(message, action);
     this.openSnackRef.afterDismissed().subscribe(() => {
@@ -24,17 +25,18 @@ export class MaterialPracticeFormComponent implements OnInit {
   }
 
   minDate = new Date();
+
   maxDate = new Date('2022-01-25');
 
   filterWeekends = (date: Date | null) => {
     console.log(date);
-    let day = (date || new Date()).getDay();
+    const day = (date || new Date()).getDay();
     return day !== 0 && day !== 6;
   };
 
   openDialog() {
     console.log('Dialog got open');
-    let dialogRef = this.matDialog.open(MatCustomDialogComponent, {
+    const dialogRef = this.matDialog.open(MatCustomDialogComponent, {
       data: { name: 'Abid Ali', height: '300px', width: '500px' },
     });
     dialogRef.afterClosed().subscribe((result) => {
@@ -42,5 +44,7 @@ export class MaterialPracticeFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // empty
+  }
 }
