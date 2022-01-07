@@ -29,12 +29,7 @@
 
 <div>
   <form>
-    <mat-form-field
-      floatLabel="auto"
-      hideRequiredMarker
-      appearance="outline"
-      color="accent"
-    >
+    <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" color="accent">
       <mat-label for="name">Name:</mat-label>
       <input id="name" name="name" matInput type="text" required />
       <mat-hint align="end"> please enter your name</mat-hint>
@@ -98,20 +93,12 @@
     </ng-template>
   </mat-menu>
 
-  <button
-    mat-raised-button
-    color="primary"
-    [matMenuTriggerData]="{ tech: 'Angular', trainer: 'M.Bilal Zahid' }"
-    [matMenuTriggerFor]="dynamicMenu"
-  >
+  <button mat-raised-button color="primary" [matMenuTriggerData]="{ tech: 'Angular', trainer: 'M.Bilal Zahid' }"
+    [matMenuTriggerFor]="dynamicMenu">
     Technology
   </button>
-  <button
-    mat-raised-button
-    color="accent"
-    [matMenuTriggerData]="{ tech: 'Node JS', trainer: 'M.Bilal' }"
-    [matMenuTriggerFor]="dynamicMenu"
-  >
+  <button mat-raised-button color="accent" [matMenuTriggerData]="{ tech: 'Node JS', trainer: 'M.Bilal' }"
+    [matMenuTriggerFor]="dynamicMenu">
     Trainer
   </button>
 </div>
@@ -174,8 +161,7 @@
       <mat-expansion-panel-header>
         <mat-panel-title> Angular Training</mat-panel-title>
         <mat-panel-description>
-          Angular training provided by invozone</mat-panel-description
-        >
+          Angular training provided by invozone</mat-panel-description>
       </mat-expansion-panel-header>
       <h3>
         This training course is designed to provide you hands on understanding
@@ -191,8 +177,7 @@
       <mat-expansion-panel-header>
         <mat-panel-title> React Training</mat-panel-title>
         <mat-panel-description>
-          React training provided by invozone</mat-panel-description
-        >
+          React training provided by invozone</mat-panel-description>
       </mat-expansion-panel-header>
       <h3>
         This training course is designed to provide you hands on understanding
@@ -201,6 +186,42 @@
 
       <mat-action-row>
         <button mat-flat-button color="primary">Enroll Training</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<br /><br />
+<div>
+  <p>Panel</p>
+  <mat-accordion multi="true" hideToggle>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Typescript Training</mat-panel-title>
+        <mat-panel-description>
+          Typescript training provided by invozone</mat-panel-description>
+      </mat-expansion-panel-header>
+      <h3>
+        This training course is designed for trainees
+      </h3>
+
+      <mat-action-row>
+        <button mat-flat-button color="accent">Enroll Training</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Vue JS Training</mat-panel-title>
+        <mat-panel-description>
+          Vue JS training provided by invozone</mat-panel-description>
+      </mat-expansion-panel-header>
+      <h3>
+        This training course is designed to provide you hands on understanding
+        of Vue JS ecosystem
+      </h3>
+
+      <mat-action-row>
+        <button mat-flat-button color="warn">Register Training</button>
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
@@ -227,10 +248,7 @@
 <!--Tabs-->
 <div>
   <p>Tabs Practice</p>
-  <mat-tab-group
-    #pracTab
-    (selectedTabChange)="tabChangeHandler(pracTab.selectedIndex)"
-  >
+  <mat-tab-group #pracTab (selectedTabChange)="tabChangeHandler(pracTab.selectedIndex)">
     <mat-tab label="Angular">Angular Training Content</mat-tab>
     <mat-tab label="React"> React Training Content </mat-tab>
     <mat-tab label="Svelet"> Svelet Training Content </mat-tab>
@@ -244,36 +262,59 @@
 <!--Stepper-->
 <div>
   <p>Stepper practice</p>
-  <mat-horizontal-stepper linear >
+  <mat-horizontal-stepper linear>
     <mat-step label="Personal Details" completed=true editable=true>
       <p>User Personal Details</p>
     </mat-step>
-    <mat-step label="Product Detials" completed=false optional = true>
+    <mat-step label="Product Detials" completed=false optional=true>
       <p>Product Details to be shipped</p>
 
       <button mat-flat-button matStepperPrevious>Back</button>
       <button mat-flat-button matStepperNext>Next</button>
     </mat-step>
-    <mat-step label="Billing Details" completed=false
-      >Billing options available for the order</mat-step
-    >
+    <mat-step label="Billing Details" completed=false>Billing options available for the order</mat-step>
+  </mat-horizontal-stepper>
+
+
+
+  <mat-horizontal-stepper linear>
+    <mat-step label="Education Details" editable=false>
+      <p>User Personal Details</p>
+    </mat-step>
+    <mat-step label="Contact Detials" completed=false optional=true>
+      <p>Contact Details to be shipped</p>
+
+      <button mat-flat-button matStepperPrevious>Back</button>
+      <button mat-flat-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step label="Nominees Details">Nominees options available for the order</mat-step>
   </mat-horizontal-stepper>
 
   <!--Vertical Stepper-->
-  <mat-vertical-stepper linear >
+  <mat-vertical-stepper linear>
     <mat-step label="Personal Details" completed=true editable=false>
       <p>User Personal Details</p>
     </mat-step>
-    <mat-step label="Product Detials" completed=false optional = true>
+    <mat-step label="Product Detials" completed=false optional=true>
       <p>Product Details to be shipped</p>
 
       <button mat-flat-button matStepperPrevious>Back</button>
       <button mat-flat-button matStepperNext>Next</button>
     </mat-step>
-    <mat-step label="Billing Details" completed=false
-      >Billing options available for the order</mat-step
-    >
+    <mat-step label="Billing Details" completed=false>Billing options available for the order</mat-step>
   </mat-vertical-stepper>
 
 </div>
 <br /><br /><br />
+
+<div *ngIf="isAdmin; else notAdmin">
+  <h1>User is Admin</h1>
+</div>
+
+<ng-template #notAdmin>
+  User is not admin
+
+</ng-template>
+
+<ng-container>This is container, and it will not add node to DOM and it can be used independently without structural
+  directives</ng-container>

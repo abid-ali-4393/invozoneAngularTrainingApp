@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialPracticeNavbarComponent implements OnInit {
   sidenavFlag = false;
-
+  public isAdmin = false;
   selectedTech = '';
 
   tabChangeHandler(index) {
